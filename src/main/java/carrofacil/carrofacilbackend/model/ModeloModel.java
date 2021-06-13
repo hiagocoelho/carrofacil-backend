@@ -1,6 +1,7 @@
 package carrofacil.carrofacilbackend.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "modelo")
@@ -16,6 +17,9 @@ public class ModeloModel {
     @ManyToOne
     @JoinColumn(name = "marca_id", nullable = false)
     private MarcaModel marca;
+
+    @OneToMany(mappedBy = "modelo")
+    private Set<CarroModel> carro;
 
     public ModeloModel() {}
 
