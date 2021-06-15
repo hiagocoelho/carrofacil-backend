@@ -52,4 +52,10 @@ public class CarroController {
         return repository.save(carro);
     }
 
+    // delete
+    @DeleteMapping(path = "/api/carros/delete/{id}")
+    public void delete(@PathVariable("id") long id) {
+        repository.deleteById(id);
+    }
+
 }
